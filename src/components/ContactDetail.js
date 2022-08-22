@@ -8,13 +8,13 @@ const ContactDetail = (props) => {
     // HERE DUE TO NEW VERSION OF ROUTER useLocation IS USED AND 
     // FROM CONTACTCARD IN LINK IT TOOK STATE AND THEN IT IS PASSED HERE
     let location = useLocation();
-    const {name, email} = location.state.contact;
+    const {name, email,profilekey} = location.state.contact;
 
     return (
         <div className='main'>
             <div className='ui center aligned card'>
                 <div className='image'>
-                    <img src={user} alt='user'></img>
+                    <img src={profilekey} alt='user'></img>
                 </div>
                 <div className='content'>
                     <div className='header'>{name}</div>

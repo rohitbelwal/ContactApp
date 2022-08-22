@@ -45,7 +45,7 @@ function App() {
   // UPDATE CONTACT
   const updateContactHandler = async (contact)=>{
     const response = await api.put(`/contacts/${contact.id}`, contact);
-    const {id, name, email} = response.data;
+    const {id, name, phoneno,isWhatsup,contype,profilekey} = response.data;
     setContacts(contacts.map(contact =>{
       return contact.id === id ? {...response.data} : contact;
     }))
@@ -96,9 +96,9 @@ function App() {
 }, [])
   
   // FOR STORING THE DATA
-  useEffect(() => {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts))
-  }, [contacts])
+  // useEffect(() => {
+  //     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts))
+  // }, [contacts])
   
   return (
     <div className='ui container'>

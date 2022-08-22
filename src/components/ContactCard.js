@@ -4,11 +4,12 @@ import icon from '../images/icon.jpg';
 
 function ContactCard(props) {
 
-    const {id,name,email} = props.contact;
+    const {id,name,email,profilekey} = props.contact;
 console.log(props.contact);
+console.log(profilekey);
     return (
         <div className='item'>
-            <img className='ui avatar image' src={icon} alt='icon'/>
+            <img className='ui avatar image' src={profilekey} alt='icon'/>
                 <div className='content'>
                     <Link to={`/contact/${id}`} state={{contact: props.contact}}>
                     <div className='header'>{name} </div>
